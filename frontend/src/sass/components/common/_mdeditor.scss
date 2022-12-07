@@ -1,0 +1,64 @@
+.mdeditor {
+  font-family: "Montserrat", sans-serif;
+  line-height: 2;
+  width: 100%;
+  min-height: 400px;
+  border-radius: 4px;
+  overflow: auto;
+  box-shadow: 0 2px 10px 0 rgb(29 31 89 / 25%);
+}
+.section-container {
+  padding: 10px 16px 15px !important;
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: rgba(99, 99, 99, 0.06);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #b3b9c5;
+    border-radius: 4px;
+  }
+}
+.markdown {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 15px;
+  font-weight: 400;
+  color: #292929;
+  &_inline {
+    background-color: rgba(96, 125, 139, 0.2);
+    border-radius: 3px;
+    padding: 3px 4px;
+    color: #333;
+  }
+}
+
+.custom-html-style,
+.markdown {
+  pre {
+    background-color: transparent;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    div {
+      border-radius: 4px;
+    }
+  }
+  a {
+    text-decoration: underline;
+    color: $main-color;
+    font-weight: 500 !important;
+  }
+  blockquote {
+    font-style: italic;
+    font-weight: 400;
+    margin: 0 16px;
+    padding: 1px 0 1px 16px;
+    color: #6d6d6d;
+    border: none;
+    background-color: #6680991a;
+    border-left: 6px solid $main-color;
+  }
+}

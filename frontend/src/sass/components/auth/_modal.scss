@@ -1,0 +1,91 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 99;
+  transition: all 0.2s ease-in;
+
+  &__container {
+    position: relative;
+    top: 100px;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    box-shadow: $box-shadow;
+    width: 400px;
+    height: auto;
+    border-radius: 6px;
+  }
+
+  &__header {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 600;
+    width: 100%;
+    padding: 16px 0 8px;
+    text-align: center;
+    user-select: none;
+  }
+
+  &__close {
+    position: absolute;
+    right: 8px;
+    top: 18px;
+    background-color: transparent;
+    color: #999;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+      color: #333;
+    }
+    i {
+      font-size: 25px;
+    }
+  }
+
+  &__body {
+    @include flex(center, center);
+    flex-direction: column;
+    width: 100%;
+    padding: 8px 16px;
+
+    form {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      width: 100%;
+      margin-top: 16px;
+    }
+    &-control {
+      margin-bottom: 16px;
+      width: 100%;
+    }
+  }
+
+  &__footer {
+    width: 100%;
+    padding: 16px;
+
+    &-register {
+      @include flex(center, center);
+    }
+
+    &-login {
+      @include flex(center, space-between);
+    }
+
+    &-link {
+      color: $main-color;
+      text-decoration: none;
+      font-size: 1.4rem;
+      user-select: none;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

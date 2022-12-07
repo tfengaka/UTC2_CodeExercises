@@ -1,0 +1,133 @@
+table:
+  name: exercises
+  schema: public
+object_relationships:
+- name: concept
+  using:
+    foreign_key_constraint_on: conceptId
+- name: contest
+  using:
+    foreign_key_constraint_on: contestId
+array_relationships:
+- name: exercise_results
+  using:
+    foreign_key_constraint_on:
+      column: exerciseId
+      table:
+        name: exercise_results
+        schema: public
+insert_permissions:
+- permission:
+    backend_only: false
+    check: {}
+    columns:
+    - challengeId
+    - conceptId
+    - contestId
+    - createdAt
+    - createdBy
+    - des
+    - id
+    - image
+    - level
+    - metadata
+    - name
+    - status
+    - topic
+    - updatedAt
+    - updatedBy
+    set:
+      createdBy: x-hasura-User-Id
+  role: moderator
+select_permissions:
+- permission:
+    allow_aggregations: true
+    columns:
+    - level
+    - metadata
+    - topic
+    - challengeId
+    - conceptId
+    - contestId
+    - createdBy
+    - des
+    - id
+    - image
+    - name
+    - status
+    - updatedBy
+    - createdAt
+    - updatedAt
+    filter:
+      status:
+        _eq: active
+  role: anonymous
+- permission:
+    allow_aggregations: true
+    columns:
+    - challengeId
+    - conceptId
+    - contestId
+    - createdAt
+    - createdBy
+    - des
+    - id
+    - image
+    - level
+    - metadata
+    - name
+    - status
+    - topic
+    - updatedAt
+    - updatedBy
+    filter:
+      status:
+        _eq: active
+  role: moderator
+- permission:
+    allow_aggregations: true
+    columns:
+    - challengeId
+    - conceptId
+    - contestId
+    - createdAt
+    - createdBy
+    - des
+    - id
+    - image
+    - level
+    - metadata
+    - name
+    - status
+    - topic
+    - updatedAt
+    - updatedBy
+    filter:
+      status:
+        _eq: active
+  role: user
+update_permissions:
+- permission:
+    check: {}
+    columns:
+    - challengeId
+    - conceptId
+    - contestId
+    - createdAt
+    - createdBy
+    - des
+    - id
+    - image
+    - level
+    - metadata
+    - name
+    - status
+    - topic
+    - updatedAt
+    - updatedBy
+    filter:
+      status:
+        _eq: active
+    set:
+      updatedBy: x-hasura-User-Id
+  role: moderator

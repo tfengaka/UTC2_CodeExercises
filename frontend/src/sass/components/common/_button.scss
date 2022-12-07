@@ -1,0 +1,36 @@
+.btn {
+  @include flex(center, center);
+  gap: 8px;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  color: $text-white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 6px 12px;
+  transition: all 0.2s ease-out;
+  text-align: center;
+  i {
+    font-size: 1.6rem;
+  }
+  &-full-lg,
+  &-full {
+    width: 100%;
+  }
+  &-lg,
+  &-full-lg {
+    font-size: 1.8rem;
+    padding: 8px 16px;
+    i {
+      font-size: 2.5rem;
+    }
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+  &.disabled {
+    opacity: 0.6;
+    cursor: unset;
+  }
+}

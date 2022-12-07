@@ -1,0 +1,124 @@
+table:
+  name: account
+  schema: public
+array_relationships:
+- name: blogs
+  using:
+    foreign_key_constraint_on:
+      column: accountId
+      table:
+        name: blogs
+        schema: public
+- name: contest_results
+  using:
+    foreign_key_constraint_on:
+      column: createdBy
+      table:
+        name: contest_results
+        schema: public
+- name: exercise_results
+  using:
+    foreign_key_constraint_on:
+      column: accountId
+      table:
+        name: exercise_results
+        schema: public
+select_permissions:
+- permission:
+    columns:
+    - avatarUrl
+    - fullName
+    - id
+    filter: {}
+  role: anonymous
+- permission:
+    allow_aggregations: true
+    columns:
+    - id
+    - email
+    - fullName
+    - password
+    - avatarUrl
+    - role
+    - birthday
+    - gender
+    - hashedToken
+    - alias
+    - status
+    - createdAt
+    - updatedAt
+    - createdBy
+    - updatedBy
+    filter: {}
+  role: moderator
+- permission:
+    allow_aggregations: true
+    columns:
+    - birthday
+    - alias
+    - avatarUrl
+    - createdBy
+    - email
+    - fullName
+    - gender
+    - hashedToken
+    - id
+    - password
+    - role
+    - status
+    - updatedBy
+    - createdAt
+    - updatedAt
+    filter: {}
+  role: user
+update_permissions:
+- permission:
+    check: null
+    columns:
+    - birthday
+    - alias
+    - avatarUrl
+    - createdBy
+    - email
+    - fullName
+    - gender
+    - hashedToken
+    - id
+    - password
+    - role
+    - status
+    - updatedBy
+    - createdAt
+    - updatedAt
+    filter:
+      status:
+        _eq: active
+    set:
+      updatedAt: now()
+      updatedBy: x-hasura-User-Id
+  role: moderator
+- permission:
+    check: null
+    columns:
+    - birthday
+    - alias
+    - avatarUrl
+    - createdBy
+    - email
+    - fullName
+    - gender
+    - hashedToken
+    - id
+    - password
+    - role
+    - status
+    - updatedBy
+    - createdAt
+    - updatedAt
+    filter:
+      status:
+        _eq: active
+    set:
+      updatedAt: now()
+      updatedBy: x-hasura-User-Id
+  role: user

@@ -1,0 +1,51 @@
+.login {
+  position: relative;
+  height: 100vh;
+  &:before {
+    content: "";
+    position: absolute;
+    background-image: $bg-img;
+    background-size: cover;
+    inset: 0;
+    z-index: -1;
+    filter: brightness(0.6);
+  }
+  .container {
+    background-color: $main-background;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 8px rgba(202, 198, 198, 0.5);
+    width: 400px;
+    height: 350px;
+    border-radius: 6px;
+    padding: 0 16px;
+  }
+
+  &__title {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  &__form {
+    font-family: "Roboto", sans-serif;
+    margin-top: 3rem;
+    width: 100%;
+
+    &-control {
+      margin-bottom: 16px;
+      font-size: 1.4rem;
+      width: 100%;
+    }
+
+    &-submit {
+      margin-top: 16px;
+      width: 100%;
+    }
+  }
+}

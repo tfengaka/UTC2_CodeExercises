@@ -1,0 +1,29 @@
+.concept {
+  background-color: #fff;
+  border-radius: 4px;
+  .container {
+    padding: 0 16px 8px;
+  }
+  .table_head {
+    user-select: none;
+    .btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+    }
+  }
+  &_exercises {
+    margin: 8px 0;
+    .table {
+      background-color: #eee;
+      border-radius: 4px;
+      border-top: 1px solid #ddd;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    &_add {
+      margin-top: 8px;
+    }
+  }
+}

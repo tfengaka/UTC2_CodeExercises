@@ -1,0 +1,156 @@
+.blog {
+  padding: 16px 24px 4px;
+  .container {
+    background-color: #fff;
+    border-radius: 4px;
+    animation-duration: 0.5s;
+  }
+  &_header {
+    padding: 8px 16px;
+    font-size: 20px;
+    color: #515a6e;
+  }
+  &_body {
+    padding: 16px;
+  }
+  &_item {
+    display: block;
+    font-family: "Roboto", sans-serif;
+    border: 1px solid #dfdfdf;
+    border-radius: 8px;
+    padding: 16px;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      box-shadow: 0 2px 10px 0 rgb(29 31 89 / 25%);
+      transform: translateY(-5px);
+    }
+    & ~ & {
+      margin-top: 24px;
+    }
+    &_body {
+      display: flex;
+      justify-content: space-between;
+      &_info {
+        flex: 1 1;
+        h3 {
+          font-size: 20px;
+          font-weight: 500;
+          margin-bottom: 8px;
+        }
+        p {
+          font-size: 15px;
+          font-weight: 500;
+          color: #41444d;
+          margin-top: 6px;
+          line-height: 27px;
+        }
+        &_author {
+          @include flex(center, space-between);
+          font-size: 14px;
+          font-weight: 500;
+          margin-top: 16px;
+          span {
+            color: #848c9e;
+          }
+        }
+      }
+      &_thumb {
+        flex-shrink: 1;
+        margin-left: 1.6rem;
+        img {
+          width: 200px;
+          border-radius: 8px;
+          object-fit: cover;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+  &_detail {
+    font-family: "Montserrat", sans-serif;
+    padding: 0 8px;
+    &_title {
+      font-size: 30px;
+      text-align: center;
+      margin: 8px 0 16px;
+    }
+    &_header {
+      @include flex(center, space-between);
+      font-weight: 500;
+      color: #515a6e;
+      &_user {
+        @include flex(center, auto);
+        &_avatar {
+          width: 50px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-right: 16px;
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        &_info {
+          .name {
+            font-size: 20px;
+          }
+          .date {
+            font-size: 14px;
+            color: #848c9e;
+          }
+        }
+      }
+    }
+    &_content {
+      padding: 2rem 0;
+      & > * {
+        font-size: 16px;
+        line-height: 2;
+      }
+    }
+  }
+  &_others {
+    margin-top: 2rem;
+    padding: 0 16px;
+    h3 {
+      font-size: 21px;
+      font-weight: 600;
+      color: #3f4657;
+    }
+    &_list {
+      padding: 2rem 3rem;
+      &_link {
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: #515661;
+        transition: all 0.3s ease;
+        &:hover {
+          color: $main-color;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &.review {
+    position: relative;
+    background-color: #fff;
+    border-radius: 4px;
+  }
+  &.post {
+    font-family: "Montserrat", sans-serif;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    .title {
+      @include flex(center, space-between);
+      gap: 16px;
+      margin-bottom: 9px;
+      font-size: 16px;
+      font-weight: 500;
+      input {
+        flex: 1;
+      }
+    }
+  }
+}

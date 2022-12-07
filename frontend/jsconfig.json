@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2018",
+    "baseUrl": "./src"
+  },
+  "exclude": ["node_modules"],
+  "include": ["src/**/*"]
+}

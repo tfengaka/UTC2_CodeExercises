@@ -1,0 +1,31 @@
+.competition {
+  width: 100%;
+  &_header {
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+
+    &-left {
+      width: inherit;
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+
+    &-right {
+      width: inherit;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      align-items: center;
+    }
+  }
+
+  &_submit {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+}

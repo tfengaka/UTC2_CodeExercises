@@ -1,0 +1,61 @@
+.content {
+  &__container {
+    background-color: $main-background;
+    box-shadow: $box-shadow;
+    color: $text-second-color;
+    border-radius: 5px;
+    .content__description {
+      padding: 4rem;
+      .content__card {
+        display: grid;
+        grid-template-areas:
+          'header header'
+          'item item'
+          'none button';
+        justify-content: space-between;
+        &--head {
+          display: flex;
+          font-size: 2rem;
+          font-weight: bold;
+        }
+        &--extra {
+          display: flex;
+          align-items: center;
+          background-color: $main-background;
+          box-shadow: $item-color 0px 0px 0px 1px;
+          padding: 3px 15px;
+          margin-right: 10px;
+          i {
+            padding-right: 3px;
+          }
+        }
+        &--body {
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+        }
+        &--button {
+          display: flex;
+          grid-area: button;
+          margin: 10px;
+          justify-content: flex-end;
+        }
+      }
+      .content__table {
+        display: grid;
+        grid-template-areas:
+          'header header header'
+          'item item item';
+        justify-content: space-between;
+        padding: 0 5px;
+        margin-right: 5px;
+        &--item {
+          font-weight: bold;
+        }
+        &--createBy {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

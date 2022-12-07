@@ -1,0 +1,46 @@
+$main-color: #ec572e;
+$main-background: #fff;
+$bg-img: url("../assets/images/background.png");
+$text-main-color: #000;
+$text-second-color: #464646;
+$text-white: #fff;
+$btn-main-bg: $main-color;
+$btn-main-color: #fff;
+$box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+$header-height: 60px;
+$sidebar-width: 225px;
+$input-color: #ccc;
+$item-color: rgba(149, 157, 165, 0.2);
+$colors: (
+  "blue": #2d8cf0,
+  "green": #19be6b,
+  "orange": #fbb96b,
+  "pink": #fe7391,
+  "white": #fff,
+  "black": #000,
+  "main": $main-color,
+  "red": #ff4e4e,
+);
+
+@each $color, $val in $colors {
+  .color-#{$color} {
+    color: $val;
+  }
+
+  .bg-#{$color} {
+    background-color: $val;
+  }
+}
+@mixin flex($align-item, $justify-content) {
+  display: flex;
+  align-items: $align-item;
+  justify-content: $justify-content;
+}
+
+@font-face {
+  font-family: "SF_Mono";
+  src: url("../assets/fonts/SFMonoRegular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}

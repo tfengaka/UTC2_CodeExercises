@@ -1,0 +1,74 @@
+.course-detail {
+  width: 100%;
+
+  &_banner {
+    width: inherit;
+    background-color: #1e2a55;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    padding: 20px;
+    color: white;
+
+    .banner_header {
+      display: flex;
+
+      margin-top: 20px;
+      align-items: center;
+
+      & > img {
+        width: 80px;
+        height: 80px;
+        border: 2px solid black;
+        border-radius: 50%;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+      }
+
+      .banner_content {
+        padding-left: 20px;
+      }
+    }
+  }
+
+  .course-concepts {
+    width: 90%;
+    padding-top: 50px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    &_card {
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 5px 5px, rgba(0, 0, 0, 0.23) 0px 2px 2px;
+      margin: 30px;
+      padding: 10px;
+
+      &-title {
+        box-shadow: $box-shadow;
+      }
+
+      &-exercise {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        .exercise_number {
+          margin: 5px 0 10px 0;
+          width: 5%;
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          border-radius: 25%;
+          cursor: pointer;
+          transition: all 0.5s ease-out;
+          font-size: 22px;
+          font-weight: bold;
+          padding: 5px;
+
+          &:hover {
+            background-color: #1e2a55;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

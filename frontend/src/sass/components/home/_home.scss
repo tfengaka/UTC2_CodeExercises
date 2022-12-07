@@ -1,0 +1,217 @@
+.home {
+  background-color: #ffffff;
+  &__header {
+    background-size: cover;
+    background-color: #1e266d;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 70px 0px;
+    text-align: center;
+    &-container {
+      @include flex(center, center);
+      flex-direction: column;
+    }
+  }
+
+  &__header-img {
+    width: 100%;
+    object-fit: cover;
+    margin: 0 0 60px 0;
+  }
+
+  &__intro {
+    color: #1e266d;
+    font-size: 15px;
+    margin: 0px 156px;
+    padding: 0px 80px;
+  }
+
+  &__title-intro {
+    color: #1e266d;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 52.92px;
+    margin: 0px 0px 60px;
+    text-align: center;
+  }
+  &__info {
+    align-items: center;
+    color: #1e266d;
+    display: flex;
+    font-size: 15px;
+    margin: 0px -15px;
+    img {
+      color: #1e266d;
+      display: inline;
+      font-size: 15px;
+      width: 100%;
+      max-width: 650px;
+      border-radius: 7px;
+    }
+  }
+  &__info-right {
+    color: #1e266d;
+    font-size: 15px;
+
+    &__item {
+      color: #1e266d;
+      display: inline-block;
+      font-size: 15px;
+      margin: 44px 70px;
+      text-align: left;
+      width: 100%;
+      max-width: 700px;
+      h3 {
+        color: #1e266d;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 28.6px;
+        margin: 10px;
+        text-align: left;
+      }
+      p {
+        color: #172b4d;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 26.46px;
+        margin: 0px 10px 10px;
+        text-align: left;
+      }
+    }
+  }
+
+  &__roadmap {
+    color: #1e266d;
+    font-size: 15px;
+    margin: 0px 156px;
+    padding: 0px 80px;
+    text-align: center;
+  }
+  &__title-roadmap {
+    color: #1e266d;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 52.92px;
+    margin: 0px 0px 80px;
+    text-align: center;
+  }
+  &__step-list {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__step-tiem {
+    color: #1e266d;
+    font-size: 15px;
+    padding: 0px 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 438px;
+    cursor: pointer;
+  }
+  &__step-img {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: #c0c0c0 0px 0px 10px 0px;
+    color: #1e266d;
+    display: inline-block;
+    width: 100%;
+    max-width: 250px;
+    margin: 0px 0px 30px;
+    text-align: center;
+    img {
+      border-radius: 10px;
+      color: #1e266d;
+      display: inline;
+      width: 100%;
+      max-width: 200px;
+      text-align: center;
+    }
+  }
+
+  &__step-title {
+    color: #2c31cf;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 33.02px;
+    margin: 0px 0px 10px;
+    text-align: center;
+  }
+
+  &__step-des {
+    color: #172b4d;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0px 0px 50px;
+    text-align: center;
+  }
+  &__step-item {
+    color: #1e266d;
+    font-size: 15px;
+    padding: 0px 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  &__footer {
+    background-color: #d6d6d6;
+    color: #1e266d;
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  &__footer-left {
+    width: 100%;
+    max-width: 680px;
+    &__des {
+      color: #172b4d;
+      font-size: 16px;
+      line-height: 19px;
+      margin: 0px 0px 13px;
+      padding: 0px 141px 0px 0px;
+    }
+    &__network {
+      color: #281756;
+      display: flex;
+      font-size: 40px;
+      margin: 20px 0;
+    }
+
+    &__network-item {
+      color: #281756;
+      display: flex;
+      font-size: 40px;
+      justify-content: start;
+      line-height: 18px;
+      margin-left: 10px;
+    }
+  }
+  &__footer-img {
+    margin: 15px 0;
+  }
+  &__footer-right {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 550px;
+
+    &__item {
+      color: #1e266d;
+      font-size: 18px;
+      line-height: 19px;
+      margin: 20px;
+
+      width: 100%;
+      max-width: 170px;
+    }
+
+    &__select {
+      color: #1e266d;
+      font-size: 14px;
+      line-height: 19px;
+      margin: 10px 0;
+    }
+  }
+}

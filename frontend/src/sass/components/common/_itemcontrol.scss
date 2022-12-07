@@ -1,0 +1,174 @@
+.input_control {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #eee;
+  width: 100%;
+  padding: 6px 12px;
+  border-radius: 4px;
+  outline: none;
+  border: 2px solid transparent;
+  transition: all 0.25s ease-in-out;
+  &:hover {
+    background-color: #fff;
+    border-color: rgba(240, 128, 128, 0.6);
+  }
+
+  &:focus {
+    background-color: #fff;
+    border-color: lightcoral !important;
+    box-shadow: rgba(240, 128, 128, 0.6) 0px 0px 16px;
+  }
+  &.error {
+    border-color: #ff4e4e;
+  }
+  &[disabled] {
+    user-select: none;
+    pointer-events: none;
+    &:hover {
+      background-color: #eee;
+      border-color: #eee;
+    }
+  }
+}
+.message-error {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #ff4e4e;
+  margin-top: 4px;
+  margin-left: 4px;
+}
+
+.tag {
+  display: inline-block;
+  height: 25px;
+  line-height: 27px;
+  padding: 0 8px;
+  margin-right: 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  vertical-align: middle;
+  opacity: 1;
+  overflow: hidden;
+  color: #ffffff;
+
+  &.topic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    color: rgb(24, 144, 255);
+    background-color: rgba(24, 144, 255, 0.08);
+  }
+}
+.divider {
+  position: relative;
+  &::after {
+    content: "";
+    background-color: #e6e6e6c5;
+    width: 100%;
+    position: absolute;
+    height: 2px;
+    top: 50%;
+    left: 0;
+  }
+}
+.animate__animated {
+  animation-duration: 0.5s;
+}
+.rollback {
+  @include flex(center, center);
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #686c79;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  i {
+    margin-right: 6px;
+  }
+  &:hover {
+    color: $main-color;
+  }
+}
+.loading {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 9999;
+}
+.circleLoading {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  &.sm {
+    width: 16px;
+    height: 16px;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    border: 2px solid transparent;
+    border-right-color: currentColor;
+    border-bottom-color: currentColor;
+    animation: circleLoading 1s forwards infinite linear;
+  }
+}
+
+.dots-loading {
+  &_wrapper {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(230, 230, 230, 0.6);
+    user-select: none;
+    z-index: 9999;
+  }
+  @include flex(center, auto);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  & > div {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 999px;
+    background-color: $main-color;
+    margin: 0 1rem;
+    z-index: 1000;
+    animation: dotLoading 1s forwards infinite linear;
+  }
+  & > div:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  & > div:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  & > div:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+}
+
+@keyframes circleLoading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dotLoading {
+  to {
+    opacity: 0;
+  }
+}

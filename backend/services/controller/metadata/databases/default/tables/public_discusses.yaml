@@ -1,0 +1,113 @@
+table:
+  name: discusses
+  schema: public
+object_relationships:
+- name: account
+  using:
+    foreign_key_constraint_on: createdBy
+- name: blog
+  using:
+    foreign_key_constraint_on: blogId
+- name: exercise
+  using:
+    foreign_key_constraint_on: exerciseId
+array_relationships:
+- name: discuss_reacts
+  using:
+    foreign_key_constraint_on:
+      column: discussId
+      table:
+        name: discuss_reacts
+        schema: public
+insert_permissions:
+- permission:
+    backend_only: false
+    check: {}
+    columns:
+    - blogId
+    - content
+    - createdBy
+    - exerciseId
+    - floor
+    - id
+    - status
+    - title
+    - updatedBy
+    - createdAt
+    - updatedAt
+    set:
+      createdBy: x-hasura-User-Id
+  role: moderator
+- permission:
+    backend_only: false
+    check: {}
+    columns:
+    - blogId
+    - content
+    - createdBy
+    - exerciseId
+    - floor
+    - id
+    - status
+    - title
+    - updatedBy
+    - createdAt
+    - updatedAt
+    set:
+      createdBy: x-hasura-User-Id
+  role: user
+select_permissions:
+- permission:
+    allow_aggregations: true
+    columns:
+    - blogId
+    - content
+    - createdBy
+    - exerciseId
+    - floor
+    - id
+    - status
+    - title
+    - updatedBy
+    - createdAt
+    - updatedAt
+    filter:
+      status:
+        _eq: active
+  role: anonymous
+- permission:
+    allow_aggregations: true
+    columns:
+    - blogId
+    - content
+    - createdBy
+    - exerciseId
+    - floor
+    - id
+    - status
+    - title
+    - updatedBy
+    - createdAt
+    - updatedAt
+    filter:
+      status:
+        _eq: active
+  role: moderator
+- permission:
+    allow_aggregations: true
+    columns:
+    - blogId
+    - content
+    - createdBy
+    - exerciseId
+    - floor
+    - id
+    - status
+    - title
+    - updatedBy
+    - createdAt
+    - updatedAt
+    filter:
+      status:
+        _eq: active
+  role: user

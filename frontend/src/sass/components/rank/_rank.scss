@@ -1,0 +1,165 @@
+.rank {
+  padding: 16px 24px 4px;
+  &_container {
+    background-color: $main-background;
+    box-shadow: $box-shadow;
+  }
+
+  &_editor {
+    display: flex;
+    background-color: #fff;
+    position: relative;
+    height: 80px;
+
+    &_header {
+      @include flex(center, space-between);
+      font-family: 'Roboto', sans-serif;
+      width: 20%;
+      margin-left: 10px;
+
+      span {
+        font-size: 16px;
+        font-weight: 500;
+      }
+      &-input {
+        @include flex(center, space-between);
+        position: relative;
+        width: 60%;
+        padding: 6px 16px;
+        border-radius: 4px;
+        border: 2px solid rgba(32, 34, 44, 0.2);
+        text-transform: capitalize;
+        margin-left: 16px;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        transition: all 0.3s ease;
+        i {
+          font-size: 2rem;
+          margin-left: 6px;
+        }
+        &:hover {
+          border-color: #a774d6;
+        }
+      }
+    }
+  }
+
+  &_head {
+    position: relative;
+    border-radius: 20px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    height: 200px;
+    margin-bottom: 10px;
+
+    & > img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+      border-radius: inherit;
+    }
+
+    &-content {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: inherit;
+      width: inherit;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &_logo {
+        & > img {
+          max-width: 150px;
+          max-height: 150px;
+          object-fit: cover;
+        }
+      }
+      &_detail {
+        text-align: left;
+        max-width: 70%;
+      }
+
+      &_detail > h1 {
+        color: #fff41b;
+      }
+    }
+  }
+  table {
+    width: 100% !important;
+    border-collapse: collapse;
+    text-indent: initial;
+    border-spacing: 2px;
+  }
+  thead {
+    width: 100%;
+  }
+  tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+  }
+  &_body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #515a6e;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border-radius: 4px;
+    word-break: break-word;
+    overflow: hidden;
+    background-color: #2d8cf0;
+
+    &_heading {
+      font-size: 16px;
+      color: white;
+      &_item {
+        position: relative;
+        height: 100%;
+        padding: 20px 0;
+      }
+    }
+    &_content {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #515a6e;
+      width: 100%;
+      padding: 0;
+      word-break: break-word;
+    }
+  }
+  &_row {
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    transition: all 0.3s ease;
+  }
+  &_cell {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: start;
+    user-select: none;
+    padding: 0 8px;
+    &.actions {
+      @include flex(center, auto);
+      gap: 10px;
+    }
+    i {
+      font-size: 16px;
+    }
+
+    &-logo {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

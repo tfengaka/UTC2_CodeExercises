@@ -1,0 +1,103 @@
+.testcase {
+  width: 100%;
+  max-height: 500px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #20222c;
+  border-bottom: 1px solid #20222c;
+  user-select: none;
+  &_header {
+    @include flex(center, none);
+    border-bottom: 1px solid #a774d6;
+    &_item {
+      @include flex(center, center);
+      font-weight: 500;
+      height: 50px;
+      width: 120px;
+      padding: 16px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(241, 225, 255, 0.3);
+      }
+      &.active {
+        color: #fff;
+        background-color: rgba(241, 225, 255, 0.3);
+      }
+    }
+  }
+  &_body {
+    display: flex;
+    &_list {
+      flex: 0 0 auto;
+      height: 200px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #20222c;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #b3b9c5;
+        border-radius: 6px;
+      }
+
+      &_item {
+        @include flex(center, space-between);
+        width: 120px;
+        height: 50px;
+        padding: 2rem;
+        transition: all 0.25s ease;
+        cursor: pointer;
+        &_icon {
+          @include flex(center, auto);
+        }
+        &:hover {
+          background-color: rgba(241, 225, 255, 0.1);
+        }
+        &.active {
+          color: #fff;
+          background-color: rgba(241, 225, 255, 0.3);
+        }
+      }
+    }
+    &_result {
+      flex: 1 1 auto;
+      padding: 16px;
+      height: 200px;
+      background-color: #282a36;
+      &_item {
+        @include flex(center, auto);
+        width: 100%;
+        gap: 16px;
+        padding: 10px 0;
+        span {
+          width: 70px;
+        }
+        &_value {
+          font-family: 'SF_Mono';
+          flex: 1;
+          font-size: 1.4rem;
+          padding: 8px;
+          border-radius: 4px;
+          background-color: #20222c;
+        }
+      }
+      &_console {
+        width: 100%;
+        height: 100%;
+        font-family: 'SF_Mono';
+        .message-error {
+          height: 100%;
+        }
+        &_empty {
+          @include flex(center, center);
+          height: 100%;
+          font-size: 3rem;
+          color: #373c52;
+        }
+      }
+    }
+  }
+}
